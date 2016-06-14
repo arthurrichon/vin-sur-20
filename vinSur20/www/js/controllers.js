@@ -74,6 +74,9 @@ angular.module('starter.controllers', [])
     .controller('FicheCtrl', function ($scope) {
     console.log('Fiche Controller initialized');
   })
+    .controller('ResultsCtrl', function ($scope) {
+    console.log('Results Controller initialized');
+  })
   .controller('HomeCtrl', function ($scope, Chats) {
     console.log('Home Controller initialized');
 

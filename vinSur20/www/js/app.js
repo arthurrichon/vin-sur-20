@@ -84,11 +84,14 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     url: "/fiche",
     templateUrl: "templates/fiche.html",
     controller: 'FicheCtrl'
-  });
+  })
 
+    .state('results', {
+        url: "/results",
+        templateUrl: "templates/results.html",
+        controller: 'ResultsCtrl'
+    });
 
-
-  $urlRouterProvider.otherwise('/fiche');
-  $urlRouterProvider.otherwise('/cave');
+  $urlRouterProvider.otherwise('/results');
 
 });

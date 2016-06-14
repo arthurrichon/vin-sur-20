@@ -44,4 +44,18 @@
 			}
 		}
 	}
+	.header-search{
+		position: relative;
+		input.search{
+			width: 100%;
+			padding-left: 6%;
+			border-top:solid 1px #ddd;
+		}
+		.ion-ios-search-strong{
+			position: absolute;
+			transform: translate(-50%,-50%);
+			top:50%;
+			left: 4%;
+		}
+	}
 }
