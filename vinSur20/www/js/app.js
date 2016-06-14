@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -31,44 +31,65 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // State to represent the Login View
-    .state('login', {
-    url: '/login',
-    abstract: true,
-    templateUrl: 'templates/login.html',
-    controller: 'LoginCtrl'
-  })
 
   // setup an abstract state for the tabs directive
   .state('tab', {
-      url: "/tab",
-      abstract: true,
-      templateUrl: "templates/tabs.html"
+    url: "/tab",
+    abstract: true,
+    templateUrl: "templates/tabs.html"
+  })
+
+
+
+  // State to represent Login View
+  .state('login', {
+    url: "/login",
+    templateUrl: "templates/login.html",
+    controller: 'LoginCtrl'
+  })
+
+
+
+  // Each tab has its own nav history stack:
+  .state('home', {
+    url: '/home',
+    templateUrl: 'templates/home.html',
+    controller: 'HomeCtrl'
+  })
+
+  .state('tab.chat', {
+    url: '/chat',
+    views: {
+        'tab-chat': {
+            templateUrl: 'templates/tab-chat.html',
+            controller: 'ChatCtrl'
+        }
+    }
   })
 
   // Each tab has its own nav history stack:
 
-  .state('tab.rooms', {
-      url: '/rooms',
-      views: {
-          'tab-rooms': {
-              templateUrl: 'templates/tab-rooms.html',
-              controller: 'RoomsCtrl'
-          }
-      }
-  })
-
-  .state('tab.chat', {
-      url: '/chat',
-      views: {
-          'tab-chat': {
-              templateUrl: 'templates/tab-chat.html',
-              controller: 'ChatCtrl'
-          }
-      }
-  })
+  // .state('tab.rooms', {
+  //     url: '/rooms',
+  //     views: {
+  //         'tab-rooms': {
+  //             templateUrl: 'templates/tab-rooms.html',
+  //             controller: 'RoomsCtrl'
+  //         }
+  //     }
+  // })
+  //
+  // .state('tab.chat', {
+  //     url: '/chat',
+  //     views: {
+  //         'tab-chat': {
+  //             templateUrl: 'templates/tab-chat.html',
+  //             controller: 'ChatCtrl'
+  //         }
+  //     }
+  // });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/login');
 
 });

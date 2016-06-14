@@ -1,0 +1,37 @@
+<ion-view view-title="Signup" hide-nav-bar="true">
+    <ion-content>
+			<div class="background-login"></div>
+        <div class="wrapper-login">
+					<div class="height">
+						<div class="list center-item">
+		            <img src="img/logo1.png" class="logo">
+		        </div>
+		        <div class="form-login">
+							<label class="item item-input custom-input">
+									<span class="input-label">Nom d'utilisateur</span>
+									<input type="text" ng-model="user.email">
+							</label>
+		            <label class="item item-input custom-input">
+		                <span class="input-label">Mail</span>
+		                <input type="text" ng-model="user.email">
+		            </label>
+		            <label class="item item-input custom-input">
+		                <span class="input-label">Mot de passe</span>
+		                <input type="password" ng-model="user.pwdForLogin">
+		            </label>
+								<p class="login-signup">Déjà un compte ? <strong ng-click="modal.hide()">Me connecter</strong></p>
+
+		        </div>
+						<button ng-click="createUser(user)" class="button custom-button button-login">
+							 M'inscrire
+						</button>
+		        <!-- <div class="list" style="text-align:center">
+		            <button ng-click="modal.show()" class="button button-small button-outline icon-left ion-person-add
+								">
+		                Create New Account
+		            </button>
+		        </div> -->
+					</div>
+        </div>
+    </ion-content>
+</ion-view>

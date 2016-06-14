@@ -1,0 +1,23 @@
+// _button.scss
+
+.custom-button{
+	width: 100%;
+	background-color: $themeColor;
+	border-bottom: 5px solid $themeBorder;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 700;
+	border-radius: 0;
+	padding: 5px 0px;
+
+	&.activated{
+		background-color: $themeBorder;
+		border-color: $activatedButton;
+	}
+}
+
+.button-login{
+	@extend .custom-button;
+	position: absolute;
+	bottom: 0;
+}

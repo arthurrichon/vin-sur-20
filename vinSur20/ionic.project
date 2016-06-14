@@ -1,4 +1,12 @@
 {
   "name": "vinSur20",
-  "app_id": "396ce57e"
+  "app_id": "396ce57e",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }
