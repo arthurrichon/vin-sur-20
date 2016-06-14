@@ -32,43 +32,65 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // State to represent the Login View
-    .state('login', {
-    url: '/login',
-    abstract: true,
-    templateUrl: 'templates/login.html',
+  // State to represent Login View
+  .state('login', {
+    url: "/login",
+    templateUrl: "templates/login.html",
     controller: 'LoginCtrl'
   })
 
   // setup an abstract state for the tabs directive
   .state('tab', {
-      url: "/tab",
-      abstract: true,
-      templateUrl: "templates/tabs.html"
+    url: "/tab",
+    abstract: true,
+    templateUrl: "templates/tabs.html"
   })
 
   // Each tab has its own nav history stack:
 
   .state('tab.rooms', {
-      url: '/rooms',
-      views: {
-          'tab-rooms': {
-              templateUrl: 'templates/tab-rooms.html',
-              controller: 'RoomsCtrl'
-          }
-      }
+    url: '/rooms',
+    views: {
+        'tab-rooms': {
+            templateUrl: 'templates/tab-rooms.html',
+            controller: 'RoomsCtrl'
+        }
+    }
   })
 
   .state('tab.chat', {
-      url: '/chat',
-      views: {
-          'tab-chat': {
-              templateUrl: 'templates/tab-chat.html',
-              controller: 'ChatCtrl'
-          }
-      }
+    url: '/chat',
+    views: {
+        'tab-chat': {
+            templateUrl: 'templates/tab-chat.html',
+            controller: 'ChatCtrl'
+        }
+    }
   })
 
+  // Each tab has its own nav history stack:
+
+  // .state('tab.rooms', {
+  //     url: '/rooms',
+  //     views: {
+  //         'tab-rooms': {
+  //             templateUrl: 'templates/tab-rooms.html',
+  //             controller: 'RoomsCtrl'
+  //         }
+  //     }
+  // })
+  //
+  // .state('tab.chat', {
+  //     url: '/chat',
+  //     views: {
+  //         'tab-chat': {
+  //             templateUrl: 'templates/tab-chat.html',
+  //             controller: 'ChatCtrl'
+  //         }
+  //     }
+  // });
+
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/login');
 
 });
