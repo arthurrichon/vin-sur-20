@@ -73,6 +73,9 @@ angular.module('starter.controllers', [])
     console.log('Rooms Controller initialized');
     $scope.rooms = Rooms.all();
   })
+    .controller('FicheCtrl', function ($scope) {
+    console.log('Fiche Controller initialized');
+  })
   .controller('HomeCtrl', function ($scope, Chats) {
     console.log('Home Controller initialized');
 

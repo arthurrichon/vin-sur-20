@@ -9815,6 +9815,15 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+.bar.bar-stable {
+  background-color: #a9243a;
+  color: #fff;
+  margin: 0; }
+
+.bar.bar-stable .title {
+  color: #fff;
+  margin: 0; }
+
 .custom-input {
   background: 0;
   border: 0;
@@ -9872,6 +9881,69 @@ a.button {
 .button-login {
   position: absolute;
   bottom: 0; }
+
+.fiche {
+  position: relative; }
+  .fiche .wine-img {
+    width: 100%; }
+  .fiche .counter-wine {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 14pt;
+    width: 70px;
+    height: 50px;
+    background-color: #a9243a;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 30px;
+    opacity: 0.8;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    .fiche .counter-wine .number-bottle {
+      padding-left: 10px; }
+  .fiche .row-info {
+    width: 100%;
+    text-transform: uppercase;
+    color: #888;
+    font-size: 12pt;
+    line-height: 25px;
+    display: flex;
+    border: solid 1px #eee; }
+  .fiche .prod {
+    height: 60px;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center; }
+    .fiche .prod .producteur {
+      padding-left: 5%; }
+    .fiche .prod .name-wine {
+      padding-left: 5%; }
+  .fiche .notes {
+    height: 70px;
+    background: #fff;
+    color: #000;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center; }
+    .fiche .notes .note {
+      width: 50%;
+      float: left;
+      text-align: center; }
+    .fiche .notes .cepage {
+      width: 50%;
+      float: left;
+      text-align: center; }
+  .fiche .add-note {
+    padding-left: 5%; }
+  .fiche .descrip {
+    color: #000;
+    padding-left: 5%;
+    text-transform: initial; }
 
 .center-item {
   display: flex;

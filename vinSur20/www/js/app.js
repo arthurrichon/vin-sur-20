@@ -67,6 +67,13 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     }
   })
 
+  .state('fiche', {
+    url: "/fiche",
+    templateUrl: "templates/fiche.html",
+    controller: 'FicheCtrl'
+  });
+
+
   // Each tab has its own nav history stack:
 
   // .state('tab.rooms', {
@@ -90,6 +97,6 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
   // });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/fiche');
 
 });
