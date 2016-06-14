@@ -39,7 +39,6 @@ angular.module('starter.controllers', [])
     }
 
     $scope.signIn = function (user) {
-
         if (user && user.email && user.pwdForLogin) {
             $ionicLoading.show({
                 template: 'Signing In...'
