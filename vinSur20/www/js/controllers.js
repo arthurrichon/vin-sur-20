@@ -65,8 +65,11 @@ angular.module('starter.controllers', [])
         //     alert("Please enter email and password both");
     }
   })
-  .controller('HomeCtrl', function ($scope, Chats) {
+  .controller('HomeCtrl', function ($scope) {
     console.log('Home Controller initialized');
+  })
+  .controller('CaveCtrl', function ($scope) {
+    console.log('Cave Controller initialized');
   })
   // .controller('ChatCtrl', function ($scope, Chats) {
   //   console.log('Chat Controller initialized');
