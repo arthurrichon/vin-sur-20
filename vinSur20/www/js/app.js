@@ -80,20 +80,15 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
   })
 
 
+  .state('fiche', {
+    url: "/fiche",
+    templateUrl: "templates/fiche.html",
+    controller: 'FicheCtrl'
+  });
 
-  // .state('tab.chat', {
-  //   url: '/chat',
-  //   views: {
-  //       'tab-chat': {
-  //           templateUrl: 'templates/tab-chats.html',
-  //           controller: 'ChatCtrl'
-  //       }
-  //   }
-  // })
 
-  // Each tab has its own nav history stack:
 
-  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/fiche');
   $urlRouterProvider.otherwise('/cave');
 
 });

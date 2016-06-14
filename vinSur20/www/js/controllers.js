@@ -71,11 +71,11 @@ angular.module('starter.controllers', [])
   .controller('CaveCtrl', function ($scope) {
     console.log('Cave Controller initialized');
   })
-  // .controller('ChatCtrl', function ($scope, Chats) {
-  //   console.log('Chat Controller initialized');
-  //   $scope.chats = Chats.all();
-  // })
-  // .controller('RoomsCtrl', function ($scope, Rooms) {
-  //   console.log('Rooms Controller initialized');
-  //   $scope.rooms = Rooms.all();
-  // });
+    .controller('FicheCtrl', function ($scope) {
+    console.log('Fiche Controller initialized');
+  })
+  .controller('HomeCtrl', function ($scope, Chats) {
+    console.log('Home Controller initialized');
+
+  });
+
