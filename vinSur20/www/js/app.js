@@ -56,7 +56,11 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     }
 
   })
-
+  .state('cave', {
+    url: '/cave',
+    templateUrl: 'templates/cave.html',
+    controller: 'CaveCtrl'
+  })
 
 
   // State to represent Login View
@@ -75,6 +79,8 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     controller: 'HomeCtrl'
   })
 
+
+
   // .state('tab.chat', {
   //   url: '/chat',
   //   views: {
@@ -87,27 +93,7 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
 
   // Each tab has its own nav history stack:
 
-  // .state('tab.rooms', {
-  //     url: '/rooms',
-  //     views: {
-  //         'tab-rooms': {
-  //             templateUrl: 'templates/tab-rooms.html',
-  //             controller: 'RoomsCtrl'
-  //         }
-  //     }
-  // })
-  //
-  // .state('tab.chat', {
-  //     url: '/chat',
-  //     views: {
-  //         'tab-chat': {
-  //             templateUrl: 'templates/tab-chat.html',
-  //             controller: 'ChatCtrl'
-  //         }
-  //     }
-  // });
-
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/login');
+  $urlRouterProvider.otherwise('/cave');
 
 });
