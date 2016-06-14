@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'firebase'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -31,13 +31,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // State to represent the Login View
-  // State to represent Login View
-  .state('login', {
-    url: "/login",
-    templateUrl: "templates/login.html",
-    controller: 'LoginCtrl'
-  })
 
   // setup an abstract state for the tabs directive
   .state('tab', {
@@ -46,16 +39,22 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     templateUrl: "templates/tabs.html"
   })
 
-  // Each tab has its own nav history stack:
 
-  .state('tab.rooms', {
-    url: '/rooms',
-    views: {
-        'tab-rooms': {
-            templateUrl: 'templates/tab-rooms.html',
-            controller: 'RoomsCtrl'
-        }
-    }
+
+  // State to represent Login View
+  .state('login', {
+    url: "/login",
+    templateUrl: "templates/login.html",
+    controller: 'LoginCtrl'
+  })
+
+
+
+  // Each tab has its own nav history stack:
+  .state('home', {
+    url: '/home',
+    templateUrl: 'templates/home.html',
+    controller: 'HomeCtrl'
   })
 
   .state('tab.chat', {

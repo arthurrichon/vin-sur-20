@@ -9819,7 +9819,8 @@ a.button {
   background: 0;
   border: 0;
   border-bottom: 2px solid #a9243a;
-  padding-left: 0; }
+  padding-left: 0;
+  margin-bottom: 10px; }
   .custom-input input {
     font-size: 20px;
     color: #fff; }
@@ -9864,6 +9865,9 @@ a.button {
   font-weight: 700;
   border-radius: 0;
   padding: 5px 0px; }
+  .custom-button.activated, .activated.button-login {
+    background-color: #861a29;
+    border-color: #660f1b; }
 
 .button-login {
   position: absolute;

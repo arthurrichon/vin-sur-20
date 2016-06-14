@@ -9,6 +9,11 @@
 	font-weight: 700;
 	border-radius: 0;
 	padding: 5px 0px;
+
+	&.activated{
+		background-color: $themeBorder;
+		border-color: $activatedButton;
+	}
 }
 
 .button-login{
