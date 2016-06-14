@@ -9882,6 +9882,7 @@ a.button {
   position: absolute;
   bottom: 0; }
 
+<<<<<<< HEAD
 .fiche {
   position: relative; }
   .fiche .wine-img {
@@ -9944,6 +9945,39 @@ a.button {
     color: #000;
     padding-left: 5%;
     text-transform: initial; }
+=======
+.header-cave {
+  background-color: #fff;
+  padding-top: 25px;
+  border-bottom: 1px solid #ddd; }
+  .header-cave .header-picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd; }
+    .header-cave .header-picture img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50px; }
+  .header-cave .header-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .header-cave .header-info .info-item {
+      border-right: 1px solid #ddd;
+      color: #888;
+      padding: 10px; }
+      .header-cave .header-info .info-item p {
+        text-align: center;
+        margin-bottom: 0;
+        font-size: 14px; }
+      .header-cave .header-info .info-item .data {
+        color: #a9243a; }
+      .header-cave .header-info .info-item:last-child {
+        border-right: 0; }
+>>>>>>> master
 
 .center-item {
   display: flex;

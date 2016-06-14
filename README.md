@@ -20,3 +20,8 @@ Appli pour l'IIM
 ```
   ionic build ios
 ```
+
+#### API KEY :
+```
+  8a9d9b23d5868dcba283f35011d90b85
+```
