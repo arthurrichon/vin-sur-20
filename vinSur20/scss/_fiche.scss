@@ -4,6 +4,16 @@
   .wine-img {
     width: 100%;
   }
+  .base{
+    position: relative;
+    .add-wine{
+      position: absolute;
+      bottom: 10px;
+      right: 24px;
+      font-size: 45px;
+      color: #a9243a;
+    }
+  }
   .counter-wine {
     position: absolute;
     top: 10px;
@@ -40,6 +50,7 @@
     background: #fff;
     flex-direction: column;
     justify-content: center;
+    position: relative;
     .producteur{
       padding-left:5%;
 
@@ -47,14 +58,15 @@
     .name-wine{
       padding-left:5%;
     }
+
   }
   .notes{
     height: 70px;
     background: #fff;
-    color: #000;
+    color: #333;
     flex-direction: row;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     .note{
       width: 50%;
       float: left;
@@ -68,12 +80,21 @@
   }
   .add-note{
     padding-left: 5%;
-
+    display: flex;
+    flex-direction: row;
+    .star{
+      padding:0 10px;
+      font-size:29px;
+    }
   }
   .descrip{
-    color: #000;
+    color: #888;
     padding-left: 5%;
     text-transform: initial;
+  }
+  .note-flex{
+    justify-content: center;
+    align-items: center;
   }
 }
 
