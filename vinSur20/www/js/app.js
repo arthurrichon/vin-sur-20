@@ -14,7 +14,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 
 angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.services'])
 
-.run(function($ionicPlatform, $rootScope, $location, Auth) {
+.run(function($ionicPlatform, $rootScope, $location, Auth, $http, queryApi) {
   $ionicPlatform.ready(function() {
     console.log($rootScope);
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -56,12 +56,6 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     }
 
   })
-  .state('cave', {
-    url: '/cave',
-    templateUrl: 'templates/cave.html',
-    controller: 'CaveCtrl'
-  })
-
 
   // State to represent Login View
   .state('login', {
@@ -75,7 +69,7 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
   // Each tab has its own nav history stack:
   .state('home', {
     url: '/home',
-    templateUrl: 'templates/home.html',
+    templateUrl: 'templates/cave.html',
     controller: 'HomeCtrl'
   })
 
@@ -85,10 +79,7 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     templateUrl: "templates/fiche.html",
     controller: 'FicheCtrl'
   });
-
-
-
-  $urlRouterProvider.otherwise('/fiche');
-  $urlRouterProvider.otherwise('/cave');
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/login');
 
 });

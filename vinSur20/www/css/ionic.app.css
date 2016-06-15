@@ -9865,6 +9865,12 @@ a.button {
   color: #fff;
   font-weight: 400; }
 
+.nav-bar-tabs-top.hide ~ .view-container .tabs-top .tabs {
+  top: 0px; }
+
+.pane[hide-nav-bar="true"] .has-tabs-top {
+  top: 49px !important; }
+
 .custom-button, .button-login {
   width: 100%;
   background-color: #a9243a;
@@ -9882,7 +9888,6 @@ a.button {
   position: absolute;
   bottom: 0; }
 
-<<<<<<< HEAD
 .fiche {
   position: relative; }
   .fiche .wine-img {
@@ -9945,7 +9950,7 @@ a.button {
     color: #000;
     padding-left: 5%;
     text-transform: initial; }
-=======
+
 .header-cave {
   background-color: #fff;
   padding-top: 25px;
@@ -9977,7 +9982,6 @@ a.button {
         color: #a9243a; }
       .header-cave .header-info .info-item:last-child {
         border-right: 0; }
->>>>>>> master
 
 .center-item {
   display: flex;

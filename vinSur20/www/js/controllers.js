@@ -6,6 +6,7 @@ angular.module('starter.controllers', [])
     var ref = new Firebase($scope.firebaseUrl);
     var auth = $firebaseAuth(ref);
 
+
     $ionicModal.fromTemplateUrl('templates/signup.html', {
       scope: $scope
     }).then(function (modal) {
@@ -65,17 +66,31 @@ angular.module('starter.controllers', [])
         //     alert("Please enter email and password both");
     }
   })
-  .controller('HomeCtrl', function ($scope) {
-    console.log('Home Controller initialized');
-  })
   .controller('CaveCtrl', function ($scope) {
     console.log('Cave Controller initialized');
   })
-    .controller('FicheCtrl', function ($scope) {
+  .controller('FicheCtrl', function ($scope) {
     console.log('Fiche Controller initialized');
   })
-  .controller('HomeCtrl', function ($scope, Chats) {
+  .controller('HomeCtrl', function ($scope, $http, queryApi, $rootScope) {
     console.log('Home Controller initialized');
 
-  });
+        dataWine = {};
+    // I apply the remote data to the local scope.
+     function applyRemoteData( newData ) {
+         $rootScope.dataApi = newData;
+         debugger;
+         console.log($rootScope.dataApi);
+     }
 
+    function loadData(){
+      queryApi.queryWine('catalog', '?search=mondavi+cab&size=5&offset=10').then(function(remoteData){
+        applyRemoteData(remoteData);
+      })
+    }
+    loadData();
+    // $scope.queryWine = queryApi.queryWine('catalog', '?search=mondavi+cab&size=5&offset=10');
+    // $scope.getData = queryApi.getData();
+
+
+  });

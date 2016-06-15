@@ -26,3 +26,11 @@
 	color: #fff;
 	font-weight: 400;
 }
+
+.nav-bar-tabs-top.hide ~ .view-container .tabs-top .tabs{
+    top: 0px;
+}
+
+.pane[hide-nav-bar="true"] .has-tabs-top{
+    top:49px!important;
+}
