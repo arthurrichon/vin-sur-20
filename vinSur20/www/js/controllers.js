@@ -66,31 +66,58 @@ angular.module('starter.controllers', [])
         //     alert("Please enter email and password both");
     }
   })
-  .controller('CaveCtrl', function ($scope) {
-    console.log('Cave Controller initialized');
-  })
-  .controller('FicheCtrl', function ($scope) {
+  .controller('SearchCtrl',
+    ['$scope', '$http', 'queryApi', '$state',
+    function ($scope, $http, queryApi, $state) {
+      console.log('Search Controller initialized');
+
+      $scope.result;
+      $scope.searchWine = '';
+      $scope.submitSearch = function(param){
+        if(angular.isArray($scope.result)){
+          $scope.result.length = 0;
+        }
+        if($scope.searchWine){
+          var url = '?search='+param+'&size=10&offset=20';
+          queryApi.queryWine('catalog', url).then(function(remoteData){
+            $scope.result = remoteData.Products.List;
+            console.info('SCOPE_RESULT', $scope.result);
+            console.info('SCOPE_PRODUCT', $scope.result[0].id);
+          })
+        }
+      }
+  }])
+  .controller('FicheCtrl', function ($scope, $stateParams, queryApi, $http) {
     console.log('Fiche Controller initialized');
+    var id = $stateParams.id;
+    console.log($stateParams.id);
+    $scope.dataFiche;
+
+    if(id){
+      queryApi.queryWine('catalog','?search='+id).then(function(remoteData){
+        $scope.dataFiche = remoteData.Products.List;
+        // $scope.rating = ($scope.rating.parseInt()) / 20;
+        console.log($scope.dataFiche);
+      })
+    }
   })
   .controller('HomeCtrl', function ($scope, $http, queryApi, $rootScope) {
     console.log('Home Controller initialized');
+    // I apply the remote data to the local scope
 
-        dataWine = {};
-    // I apply the remote data to the local scope.
-     function applyRemoteData( newData ) {
-         $rootScope.dataApi = newData;
-         debugger;
-         console.log($rootScope.dataApi);
-     }
+    $scope.dataApi = {};
+    function applyRemoteData( newData ) {
+       $scope.dataApi = newData.Products;
+       console.log($scope.dataApi);
+    }
 
     function loadData(){
-      queryApi.queryWine('catalog', '?search=mondavi+cab&size=5&offset=10').then(function(remoteData){
-        applyRemoteData(remoteData);
-      })
+     queryApi.queryWine('catalog', '?search=mondavi+cab&size=5&offset=10').then(function(remoteData){
+       applyRemoteData(remoteData);
+     })
     }
     loadData();
-    // $scope.queryWine = queryApi.queryWine('catalog', '?search=mondavi+cab&size=5&offset=10');
-    // $scope.getData = queryApi.getData();
+
 
 
   });

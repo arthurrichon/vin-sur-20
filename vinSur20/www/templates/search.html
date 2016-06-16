@@ -1,0 +1,23 @@
+<ion-view view-title="Cave" align-title="center">
+    <ion-content ng-controller="SearchCtrl">
+      <div class="bar bar-header item-input-inset custom-header">
+				<form ng-submit="submitSearch(searchWine)"  class="dispFlexBet">
+					<label class="item-input-wrapper">
+	          <i class="icon ion-ios-search placeholder-icon"></i>
+	          <input type="search" placeholder="Search" ng-model="searchWine">
+	        </label>
+
+	        <button class="button button-submit">
+	          Submit
+	        </button>
+				</form>
+      </div>
+			<div class="cave-list" ng-repeat="x in result track by $index">
+				<a class="item item-avatar" ui-sref="fiche({id : result[$index].Id})">
+					<img ng-src="{{result[$index].Labels.Url}}" alt="" />
+		      <h2>{{result[$index].Name}}</h2>
+		      <p>{{result[$index].Varietal.Name}}</p>
+		    </a>
+			</div>
+    </ion-content>
+</ion-view>

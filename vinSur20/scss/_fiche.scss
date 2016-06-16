@@ -8,73 +8,37 @@
     position: absolute;
     top: 10px;
     right: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+
+    background-color: rgba(34, 34, 34, 0.8);
     color: #fff;
-    font-size: 14pt;
-    width: 70px;
-    height: 50px;
-    background-color: #a9243a;
-    font-weight: bold;
-    text-align: center;
-    vertical-align: middle;
-    border-radius: 30px;
-    opacity: 0.8;
+    font-weight: 700;
+    font-size: 24px;
+
+    width: 80px;
+    height: 40px;
+
     display: flex;
-    flex-direction: row;
-    justify-content: center;
     align-items: center;
-    .number-bottle{
-      padding-left:10px;
+    justify-content: space-between;
+  }
+
+  .row-fiche{
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+
+    p{
+      margin-bottom: 0px;
     }
-  }
-  .row-info {
-    width: 100%;
-    text-transform: uppercase;
-    color: #888;
-    font-size: 12pt;
-    line-height: 25px;
-    display: flex;
-    border:solid 1px #eee;
-  }
-  .prod {
-    height: 60px;
-    background: #fff;
-    flex-direction: column;
-    justify-content: center;
     .producteur{
-      padding-left:5%;
+      text-transform: uppercase;
+      color: #888;
+    }
 
+    .nom-vin{
+      font-weight: 200;
+      color: #333;
     }
-    .name-wine{
-      padding-left:5%;
-    }
-  }
-  .notes{
-    height: 70px;
-    background: #fff;
-    color: #000;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    .note{
-      width: 50%;
-      float: left;
-      text-align: center;
-    }
-    .cepage{
-      width: 50%;
-      float: left;
-      text-align: center;
-    }
-  }
-  .add-note{
-    padding-left: 5%;
-
-  }
-  .descrip{
-    color: #000;
-    padding-left: 5%;
-    text-transform: initial;
   }
 }
-
-

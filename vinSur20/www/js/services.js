@@ -13,6 +13,7 @@ angular.module('starter.services', ['firebase'])
             var urlApi = "http://services.wine.com/api/beta2/service.svc/json/",
                 apiKey = "&apikey=8a9d9b23d5868dcba283f35011d90b85";
             // Query vers wine.api.com
+            console.log(urlApi + queryTarget + queryParam + apiKey);
             var query = $http({
               method: 'GET',
               url: urlApi + queryTarget + queryParam + apiKey,

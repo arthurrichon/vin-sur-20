@@ -43,18 +43,7 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
   .state('tab', {
     url: "/tab",
     abstract: true,
-    templateUrl: "templates/tabs.html",
-    resolve: {
-           // controller will not be loaded until $requireAuth resolves
-           // Auth refers to our $firebaseAuth wrapper in the example above
-           "currentAuth": ["Auth",
-               function (Auth) {
-                   // $requireAuth returns a promise so the resolve waits for it to complete
-                   // If the promise is rejected, it will throw a $stateChangeError (see above)
-                   return Auth.$requireAuth();
-              }]
-    }
-
+    templateUrl: "templates/tabs.html"
   })
 
   // State to represent Login View
@@ -64,21 +53,26 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     controller: 'LoginCtrl'
   })
 
-
-
   // Each tab has its own nav history stack:
   .state('home', {
     url: '/home',
     templateUrl: 'templates/cave.html',
     controller: 'HomeCtrl'
   })
-
-
+  .state('search', {
+    url: '/search',
+    templateUrl: 'templates/search.html'
+  })
   .state('fiche', {
-    url: "/fiche",
+    url: "/fiche/:id",
     templateUrl: "templates/fiche.html",
-    controller: 'FicheCtrl'
-  });
+    controller: 'FicheCtrl',
+    resolve:{
+      id: ['$stateParams', function($stateParams){
+          return $stateParams.id;
+      }]
+   }
+  })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 
