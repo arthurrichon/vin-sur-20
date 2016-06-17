@@ -9900,6 +9900,20 @@ a.button {
   position: absolute;
   bottom: 0; }
 
+.button-add {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0px 1px 1px #222;
+  position: absolute;
+  top: -25px;
+  right: 30px;
+  background-color: #a9243a;
+  color: #fff; }
+  .button-add:active {
+    background-color: #971a2c; }
+
 .fiche {
   position: relative; }
   .fiche .wine-img {
@@ -9921,7 +9935,8 @@ a.button {
     justify-content: space-between; }
   .fiche .row-fiche {
     border-bottom: 1px solid #ddd;
-    padding: 10px; }
+    padding: 10px;
+    position: relative; }
     .fiche .row-fiche p {
       margin-bottom: 0px; }
     .fiche .row-fiche .producteur {
@@ -9930,6 +9945,29 @@ a.button {
     .fiche .row-fiche .nom-vin {
       font-weight: 200;
       color: #333; }
+  .fiche .row-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd; }
+    .fiche .row-info .info-note {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-right: 1px solid #ddd; }
+      .fiche .row-info .info-note span {
+        padding-left: 10px;
+        padding-right: 10px; }
+    .fiche .row-info .info-origin {
+      padding: 10px; }
+  .fiche .row-content {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #444;
+    text-align: justify; }
 
 .header-cave {
   background-color: #a9243a;

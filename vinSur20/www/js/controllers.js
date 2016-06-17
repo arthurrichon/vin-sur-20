@@ -87,18 +87,28 @@ angular.module('starter.controllers', [])
         }
       }
   }])
-  .controller('FicheCtrl', function ($scope, $stateParams, queryApi, $http) {
+  .controller('FicheCtrl', function ($scope, $ionicModal, $stateParams, queryApi, $http) {
     console.log('Fiche Controller initialized');
     var id = $stateParams.id;
     console.log($stateParams.id);
     $scope.dataFiche;
+    $scope.description = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
 
     if(id){
       queryApi.queryWine('catalog','?search='+id).then(function(remoteData){
         $scope.dataFiche = remoteData.Products.List;
         // $scope.rating = ($scope.rating.parseInt()) / 20;
-        console.log($scope.dataFiche);
+        if($scope.dataFiche.Description) $scope.description = $scope.dataFiche.Description;
+
       })
+    }
+
+    $scope.addWine = function(id){
+      $ionicModal.fromTemplateUrl('templates/add-wine.html', {
+        scope: $scope
+      }).then(function (modal) {
+        $scope.modal = modal;
+      });
     }
   })
   .controller('HomeCtrl', function ($scope, $http, queryApi, $rootScope) {

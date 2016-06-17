@@ -67,12 +67,13 @@ angular.module('starter', ['ionic', 'firebase', 'starter.controllers', 'starter.
     url: "/fiche/:id",
     templateUrl: "templates/fiche.html",
     controller: 'FicheCtrl',
-    resolve:{
+    resolve: {
       id: ['$stateParams', function($stateParams){
           return $stateParams.id;
       }]
    }
   })
+  
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/login');
 
