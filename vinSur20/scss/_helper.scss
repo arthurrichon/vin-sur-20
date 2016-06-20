@@ -6,7 +6,21 @@
 	justify-content: center;
 }
 
+.dispFlexBet{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
 .height{
 	position: relative;
 	height: 100%;
+}
+
+.text-ellipsis{
+	text-overflow: ellipsis;
+	width: 300px;
+	white-space: nowrap;
+	overflow: hidden;
+
 }

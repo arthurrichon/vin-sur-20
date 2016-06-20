@@ -1,10 +1,30 @@
 // _header.scss
 .bar.bar-stable{
-  background-color: #a9243a;
+  background-color: $themeBorder;
   color: #fff;
   margin:0;
 }
+
 .bar.bar-stable .title{
   color: #fff;
   margin:0;
+}
+
+.bar.bar-header.custom-header{
+  background-color: $themeColor!important;
+
+  label{
+    background-color: $lighterTheme;
+
+    i{
+      color: #fff;
+      font-weight: bold;
+    }
+    ::-webkit-input-placeholder {
+       color: #fff;
+    }
+    input{
+      color: #fff;
+    }
+  }
 }

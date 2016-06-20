@@ -9816,13 +9816,25 @@ a.button {
   transition-duration: 0s; }
 
 .bar.bar-stable {
-  background-color: #a9243a;
+  background-color: #861a29;
   color: #fff;
   margin: 0; }
 
 .bar.bar-stable .title {
   color: #fff;
   margin: 0; }
+
+.bar.bar-header.custom-header {
+  background-color: #a9243a !important; }
+  .bar.bar-header.custom-header label {
+    background-color: #d7435b; }
+    .bar.bar-header.custom-header label i {
+      color: #fff;
+      font-weight: bold; }
+    .bar.bar-header.custom-header label ::-webkit-input-placeholder {
+      color: #fff; }
+    .bar.bar-header.custom-header label input {
+      color: #fff; }
 
 .custom-input {
   background: 0;
@@ -9888,6 +9900,20 @@ a.button {
   position: absolute;
   bottom: 0; }
 
+.button-add {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: 0;
+  box-shadow: 0px 1px 1px #222;
+  position: absolute;
+  top: -25px;
+  right: 30px;
+  background-color: #a9243a;
+  color: #fff; }
+  .button-add:active {
+    background-color: #971a2c; }
+
 .fiche {
   position: relative; }
   .fiche .wine-img {
@@ -9896,65 +9922,57 @@ a.button {
     position: absolute;
     top: 10px;
     right: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    background-color: rgba(34, 34, 34, 0.8);
     color: #fff;
-    font-size: 14pt;
-    width: 70px;
-    height: 50px;
-    background-color: #a9243a;
-    font-weight: bold;
-    text-align: center;
-    vertical-align: middle;
-    border-radius: 30px;
-    opacity: 0.8;
+    font-weight: 700;
+    font-size: 24px;
+    width: 80px;
+    height: 40px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center; }
-    .fiche .counter-wine .number-bottle {
-      padding-left: 10px; }
+    align-items: center;
+    justify-content: space-between; }
+  .fiche .row-fiche {
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    position: relative; }
+    .fiche .row-fiche p {
+      margin-bottom: 0px; }
+    .fiche .row-fiche .producteur {
+      text-transform: uppercase;
+      color: #888; }
+    .fiche .row-fiche .nom-vin {
+      font-weight: 200;
+      color: #333; }
   .fiche .row-info {
-    width: 100%;
-    text-transform: uppercase;
-    color: #888;
-    font-size: 12pt;
-    line-height: 25px;
     display: flex;
-    border: solid 1px #eee; }
-  .fiche .prod {
-    height: 60px;
-    background: #fff;
-    flex-direction: column;
-    justify-content: center; }
-    .fiche .prod .producteur {
-      padding-left: 5%; }
-    .fiche .prod .name-wine {
-      padding-left: 5%; }
-  .fiche .notes {
-    height: 70px;
-    background: #fff;
-    color: #000;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center; }
-    .fiche .notes .note {
-      width: 50%;
-      float: left;
-      text-align: center; }
-    .fiche .notes .cepage {
-      width: 50%;
-      float: left;
-      text-align: center; }
-  .fiche .add-note {
-    padding-left: 5%; }
-  .fiche .descrip {
-    color: #000;
-    padding-left: 5%;
-    text-transform: initial; }
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd; }
+    .fiche .row-info .info-note {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      border-right: 1px solid #ddd; }
+      .fiche .row-info .info-note span {
+        padding-left: 10px;
+        padding-right: 10px; }
+    .fiche .row-info .info-origin {
+      padding: 10px; }
+  .fiche .row-content {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #444;
+    text-align: justify; }
 
 .header-cave {
-  background-color: #fff;
+  background-color: #a9243a;
   padding-top: 25px;
-  border-bottom: 1px solid #ddd; }
+  border-bottom: 1px solid #971a2c; }
   .header-cave .header-picture {
     display: flex;
     align-items: center;
@@ -9972,14 +9990,14 @@ a.button {
     justify-content: space-between; }
     .header-cave .header-info .info-item {
       border-right: 1px solid #ddd;
-      color: #888;
+      color: #fff;
       padding: 10px; }
       .header-cave .header-info .info-item p {
         text-align: center;
         margin-bottom: 0;
         font-size: 14px; }
       .header-cave .header-info .info-item .data {
-        color: #a9243a; }
+        color: #fff; }
       .header-cave .header-info .info-item:last-child {
         border-right: 0; }
 
@@ -9988,6 +10006,17 @@ a.button {
   align-items: center;
   justify-content: center; }
 
+.dispFlexBet {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; }
+
 .height {
   position: relative;
   height: 100%; }
+
+.text-ellipsis {
+  text-overflow: ellipsis;
+  width: 300px;
+  white-space: nowrap;
+  overflow: hidden; }

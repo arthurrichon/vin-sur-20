@@ -8,27 +8,30 @@
                     <div class="ion-ios-wineglass"></div>
                     <div class="number-bottle">20</div>
                 </div>
-            </div>
-            <div class="row-info prod">
-                <div class="producteur">PRODUCTEUR</div>
-                <div class="name-wine">Nom du vin</div>
-            </div>
-            <div class="row-info notes">
-                <div class="note">4/5</div>
-                <div class="cepage">Cépage, France</div>
-            </div>
-            <div class="row-info prod note-flex">
-                <div class="add-note">
-                    etoile etoile etoile
+                <div class="row-fiche">
+                  <p class="producteur">{{dataFiche[0].Vineyard.Name}}</p>
+                  <p class="nom-vin">{{dataFiche[0].Name}}</p>
+                  <button class="button-add" type="button" name="button" ng-click="addWine({{dataFiche[0].id}})">+</button>
+                </div>
+                <div class="row-info">
+                  <div class="info-note">
+                    <span>{{dataFiche[0].Ratings.HighestScore / 100 * 5}} / 5</span>
+                    <span>{{dataFiche[0].Ratings.List.length}} notes</span>
+                  </div>
+                  <div class="info-origin">
+                    <span>{{dataFiche[0].Varietal.Name}}, {{dataFiche[0].Appellation.Region.Name}}</span>
+                  </div>
+                </div>
+                <div class="item range">
+                  <i class="icon ion-ios-star-outline"></i>
+                  <input type="range" name="volume" min="0" max="5" value="2.5" ng-model="notation">
+                  <i class="icon ion-ios-star"></i>
+                </div>
+                <div class="row-content">
+                  {{description}}
                 </div>
             </div>
-            <div class="row-info description">
-                <div class="descrip">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam architecto at dolorem
-                    doloremque eligendi esse eum eveniet facere, illo laudantium, minus molestias neque perspiciatis
-                    recusandae saepe vitae voluptate voluptatibus!
-                </div>
-            </div>
+
 
         </div>
 
